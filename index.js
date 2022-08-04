@@ -2,10 +2,16 @@ import express from "express";
 // import { GetApi } from "./modules/getData.js";
 import fetch from "node-fetch";
 import ejs from "ejs";
+import path from 'path';
+import {fileURLToPath} from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.set('view engine', 'ejs');
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(path.join(__dirname, "/public")));
 
 const port = process.env.PORT || 3000;
 
