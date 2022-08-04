@@ -3,7 +3,7 @@ WORKDIR /project
 COPY package.json .
 RUN npm install
 
-WORKDIR /project/app
+WORKDIR ./app
 COPY index.js .
 
 CMD ["node", "index.js"]
