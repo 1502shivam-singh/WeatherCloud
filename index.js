@@ -9,7 +9,7 @@ app.use(express.static("public"));
 
 const port = process.env.PORT || 3000;
 
-app.get('/weather', (req, res) => {
+app.get('/', (req, res) => {
     // let dataItems = GetApi();
 
     const apiId= 'fbe186b8ecb647f195b195622220408';
