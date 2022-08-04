@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+
     <div class="output">
-        <%= data.loc %>,
-        <%= data.temp %>°C
+        <h1 class="head">Weather Clouds</h1>
+        <p class="loc">You are near: <%= data.loc %>,</p>
+        <p class="temp">Temperature: <%= data.temp %>°C</p>
     </div>
 
     <!-- <script src="./index.js"></script> -->

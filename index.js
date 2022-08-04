@@ -5,7 +5,7 @@ import ejs from "ejs";
 
 const app = express();
 app.set('view engine', 'ejs');
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 
 const port = process.env.PORT || 3000;
 
@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
     const apiId= 'fbe186b8ecb647f195b195622220408';
     let dataSet;
 
-    const CityName = "Mumbai";
+    const CityName = "Nangal";
     console.log(CityName)
     const url = `http://api.weatherapi.com/v1/current.json?key=${apiId}&q=${CityName}&aqi=yes`;
     console.log(url);
