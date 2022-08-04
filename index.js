@@ -11,6 +11,8 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 app.set('view engine', 'ejs');
+console.log(__dirname);
+// app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.static(path.join(__dirname, "/public")));
 
 const port = process.env.PORT || 3000;
