@@ -15,34 +15,37 @@ app.get('/', (req, res) => {
     const apiId= 'fbe186b8ecb647f195b195622220408';
     let dataSet;
 
-        const CityName = "Mumbai";
-        console.log(CityName)
-        const url = `http://api.weatherapi.com/v1/current.json?key=${apiId}&q=${CityName}&aqi=yes`;
-        console.log(url);
-        
-        fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-            dataSet = {
-                loc: data.location.name,
-                temp: data.current.temp_c,
-            }
-        }).catch((err) => {
-            console.log(err)
-            dataSet = {
-                loc: "Sorry location not found",
-                temp:"Sorry location not found",
-            }
-        })    
-
-
-
-
+    const CityName = "Mumbai";
+    console.log(CityName)
+    const url = `http://api.weatherapi.com/v1/current.json?key=${apiId}&q=${CityName}&aqi=yes`;
+    console.log(url);
     
-    console.log({dataSet});
-    res.render("index", {
-        data : dataSet,
-    });
+    fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+        dataSet = {
+            loc: data.location.name,
+            temp: data.current.temp_c,
+        }
+
+        console.log({dataSet});
+        res.render("index", {
+            data : dataSet,
+        });
+    }).catch((err) => {
+        console.log(err)
+        dataSet = {
+            loc: "Sorry location not found",
+            temp:"Sorry location not found",
+        }
+
+        console.log({dataSet});
+        res.render("index", {
+            data : dataSet,
+        });
+    })    
+
+
 });
 
 app.listen(port, () => {
