@@ -12,21 +12,10 @@ function GetApi() {
     fetch(url)
     .then((res) => res.json())
     .then((data) => {
-            dataSet = {
-                loc: data.location.name,
-                temp: data.current.temp_c,
-            }
-            
-        //     let output = `
-        //         <div>
-        //             <div style="" class="p-3">        
-        //                 <p class="m-0" style="font-width:bold; font-size:2rem;">${data.location.name}</p>
-        //                 <p class="m-0" style="font-width:bold; font-size:4rem;"> ${data.current.temp_c}°C</p>
-        //             </div>
-        //         </div>
-        //         `;
-        //     document.querySelector('.output').innerHTML = output;
-        // console.log('printing data', data);
+        dataSet = {
+            loc: data.location.name,
+            temp: data.current.temp_c,
+        }
     }).catch((err) => {
         console.log(err)
         dataSet = {
