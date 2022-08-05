@@ -37,11 +37,11 @@ app.get('/', (req, res) => {
         }
 
         console.log({dataSet});
-        res.render("index", {
-            data : dataSet,
-        });
+        // res.render("index", {
+        //     data : dataSet,
+        // });
 
-        res.sendFile(path.join(__dirname+'/views/index.ejs'), {
+        res.render("weather", {
             data: dataSet,
         });
 
@@ -57,7 +57,7 @@ app.get('/', (req, res) => {
         //     data : dataSet,
         // });
 
-        res.sendFile(path.join(__dirname+'/views/index.ejs'), {
+        res.render("weather", {
             data: dataSet,
         });
     })    
