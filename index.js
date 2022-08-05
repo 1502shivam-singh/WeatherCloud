@@ -12,6 +12,7 @@ const __dirname = path.dirname(__filename);
 const app = express();
 app.set('view engine', 'ejs');
 console.log(__dirname);
+
 // app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.static(path.join(__dirname, "/public")));
 
@@ -65,6 +66,6 @@ app.get('/', (req, res) => {
 
 });
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}!`)
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`Example app listening on`);
 });
