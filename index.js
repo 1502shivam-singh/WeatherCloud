@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
     console.log(url);
     
     fetch(url)
-    .then((res) => res.json())
+    .then((response) => response.json())
     .then((data) => {
         dataSet = {
             loc: data.location.name,
